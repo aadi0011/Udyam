@@ -1,0 +1,90 @@
+### ---------- Secrets / environment ----------
+.env
+.env.local
+*.key
+api_key.txt
+secrets.json
+
+### ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+### ---------- Jupyter notebooks (outputs bloat the repo) ----------
+*.ipynb_checkpoints
+# Uncomment below if you don't want raw notebooks in version control at all:
+# *.ipynb
+
+### ---------- ML / model artifacts (large binary files) ----------
+# Note: .pkl / .joblib files are intentionally NOT ignored — they're small
+# enough to track in this repo (pricing model, encoders, PCA, embeddings).
+*.pt
+*.pth
+*.onnx
+*.h5
+*.bin
+*.safetensors
+pricing_trained/
+
+### ---------- Hugging Face / model download caches ----------
+.cache/
+huggingface_cache/
+~/.cache/huggingface/
+
+### ---------- Temp audio/image files generated at runtime ----------
+temp_audio.*
+temp_raw_audio
+temp_audio.wav
+temp_audio.ogg
+temp_audio.webm
+*.tmp
+
+### ---------- FastAPI / server ----------
+*.log
+nohup.out
+
+### ---------- Flutter ----------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/flutter_export_environment.sh
+ios/Pods/
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/local.properties
+*.iml
+*.ipr
+*.iws
+.idea/
+
+### ---------- macOS / Windows system files ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### ---------- VS Code ----------
+.vscode/
+*.code-workspace
+
+### ---------- Misc ----------
+*.zip
+*.rar
+node_modules/
