@@ -26,6 +26,7 @@ from sentence_transformers import SentenceTransformer
 import os
 from dotenv import load_dotenv
 from supabase import create_client
+from pathlib import Path
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -50,16 +51,16 @@ print("prcing model loaded...")
 session = new_session("isnet-general-use")
 print("new_session loaded")
 
-
-lgb_model = joblib.load("lgb_model.pkl")
-le_category = joblib.load("le_category.pkl")
-le_material = joblib.load("le_material.pkl")
-pca = joblib.load("pca_transform.pkl")
-known_categories = joblib.load("known_categories.pkl")
-known_materials = joblib.load("known_materials.pkl")
-known_cat_embeddings = joblib.load("known_cat_embeddings.pkl")
-known_mat_embeddings = joblib.load("known_mat_embeddings.pkl")
-X_columns = joblib.load("x_columns_2.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+lgb_model = joblib.load(BASE_DIR / "lgb_model.pkl")
+le_category = joblib.load(BASE_DIR / "le_category.pkl")
+le_material = joblib.load(BASE_DIR / "le_material.pkl")
+pca = joblib.load(BASE_DIR / "pca_transform.pkl")
+known_categories = joblib.load(BASE_DIR / "known_categories.pkl")
+known_materials = joblib.load(BASE_DIR / "known_materials.pkl")
+known_cat_embeddings = joblib.load(BASE_DIR / "known_cat_embeddings.pkl")
+known_mat_embeddings = joblib.load(BASE_DIR / "known_mat_embeddings.pkl")
+X_columns = joblib.load(BASE_DIR / "x_columns_2.pkl")
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 @app.post("/image")
